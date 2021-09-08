@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-box slds-theme_default">
+        <lightning-card>
+            <h1 class="slds-page-header__title slds-truncate">Input Proposal Information</h1>
+            <div class="slds-var-m-around_medium">
+                <h2 class="slds-text-align_center">Client Contact Reference</h2>
+                <lightning-input type="text" max-length=20 required label="Name" onchange={onClientNameChange}>
+                </lightning-input>
+                <lightning-input type="text" max-length=20 required label="LastName" onchange={onClientLastNameChange}>
+                </lightning-input>
+                </br>
+                <h2 class="slds-text-align_center">Partner Agent Contact Reference</h2>
+                <lightning-input type="text" max-length=20 required label="Name" onchange={onPartnerNameChange}>
+                </lightning-input>
+                <lightning-input type="text" max-length=20 required label="LastName" onchange={onPartnerLastNameChange}>
+                </lightning-input>
+                </br>
+                <h2 class="slds-text-align_center">Additional information</h2>
+                <lightning-input type="number" formatter="currency" max-length=16 label="Agreed price"
+                    onchange={onAgreedPriceChange}>
+                </lightning-input>
+            </div>
+            <div slot="footer">
+                <lightning-button class="slds-var-m-right_x-small" label='Next' onclick={handleNextPageClick}>
+                </lightning-button>
+            </div>
+        </lightning-card>
+    </div>
+    <!--When contact creation fail-->
+    <template if:true={annErrorOccured}>
+        {messageError}
+    </template>
+</template>

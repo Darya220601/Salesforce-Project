@@ -1,0 +1,12 @@
+<template>
+    <template if:false={isTrueTemplate}>
+        <c-first-screen-proposal onnextpageclick={onNextPageClick}></c-first-screen-proposal>
+    </template>
+
+    <!--Change screen of proposal creation-->
+    <template if:true={isTrueTemplate}>
+        <c-second-screen-proposal agreed-price={agreedPrice} client-id={clientId} partner-id={partnerId}
+            opportunity-id={recordId} onbuttonclick={onButtonClick}>
+        </c-second-screen-proposal>
+    </template>
+</template>

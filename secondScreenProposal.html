@@ -1,0 +1,34 @@
+<template>
+    <div class="slds-box slds-theme_default">
+        <lightning-card title="Select Property for Proposal creation">
+            <div class="slds-box">
+                <lightning-datatable data={propertyList.data} columns={cols} key-field="Id" max-row-selection="1"
+                    onrowselection={handleRowSelection}>
+                </lightning-datatable>
+            </div>
+            <div slot="footer">
+                <lightning-button class="slds-var-m-right_x-small" label="Save" onclick={handleButtonClick}>
+                </lightning-button>
+                </br>
+                <div>
+                    <!--If There Was no selected Properties in the table-->
+                    <template if:true={error}>
+                        {messageError}
+                    </template>
+                </div>
+                </br>
+                <div>
+                    <!--Message after creating Proposal-->
+                    {messageSuccessfulCreating}
+                    </br>
+                    <!--Display the button "Create new Proposal if proposal was created successfully"-->
+                    <template if:true={isSuccessCreation}>
+                        <lightning-button class="slds-var-m-right_x-small" label="Create New Proposal"
+                            onclick={handleNewProposalClick}>
+                        </lightning-button>
+                    </template>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>

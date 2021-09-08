@@ -1,0 +1,17 @@
+h1 {
+    color: rgb(29, 96, 189);
+    text-align:center;
+   
+}
+
+.firstScreenProposal {
+    background-color: #fafaf9;
+    height: 400vh;
+    overflow: scroll;
+}
+
+h2 {
+    color: rgb(49, 124, 230);
+    
+   
+}
